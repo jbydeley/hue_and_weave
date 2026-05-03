@@ -9,6 +9,7 @@ export { default as SmallCaps } from './atoms/SmallCaps.svelte';
 export { default as Swatch } from './atoms/Swatch.svelte';
 export { default as Wordmark } from './atoms/Wordmark.svelte';
 
+export { default as AnnounceTrack } from './molecules/AnnounceTrack.svelte';
 export { default as CollectionTab } from './molecules/CollectionTab.svelte';
 export { default as NavLinks } from './molecules/NavLinks.svelte';
 export { default as NavLogo } from './molecules/NavLogo.svelte';
@@ -19,8 +20,10 @@ export { default as ManifestoSignature } from './molecules/ManifestoSignature.sv
 export { default as StockistRow } from './molecules/StockistRow.svelte';
 export { default as WorldMap } from './molecules/WorldMap.svelte';
 
+export { default as Announce } from './organisms/Announce.svelte';
 export { default as Collections } from './organisms/Collections.svelte';
 export { default as Craft } from './organisms/Craft.svelte';
+export { default as Footer } from './organisms/Footer.svelte';
 export { default as HeroPlate } from './organisms/HeroPlate.svelte';
 export { default as Manifesto } from './organisms/Manifesto.svelte';
 export { default as Nav } from './organisms/Nav.svelte';
