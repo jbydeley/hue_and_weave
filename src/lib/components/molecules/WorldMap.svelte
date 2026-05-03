@@ -45,7 +45,7 @@
 
 	{#each stockists as s, i (s.city)}
 		{@const sold = s.status === 'sold-out'}
-		{@const pinFill = sold ? '#8E887C' : '#C17B3A'}
+		{@const pinFill = sold ? 'var(--color-text-tertiary)' : 'var(--color-amber)'}
 		<g
 			role="button"
 			tabindex="-1"

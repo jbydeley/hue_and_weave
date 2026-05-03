@@ -47,6 +47,32 @@
 	--font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
 }
 
+/* ── Global defaults (match landing.html body/html rules) ────────────────── */
+html {
+	background: var(--color-bg);
+	transition: background 0.35s ease;
+}
+
+body {
+	color: var(--color-text-primary);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	transition:
+		background 0.35s ease,
+		color 0.35s ease;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button {
+	font-family: inherit;
+	cursor: default;
+}
+
 /* ── Charcoal (dark) ──────────────────────────────────────────────────────── */
 [data-theme='charcoal'] {
 	--color-amber: #e2a875;
