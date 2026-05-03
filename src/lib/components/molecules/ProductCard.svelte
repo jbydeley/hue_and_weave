@@ -32,9 +32,13 @@
 		<span class="text-[9px] font-medium tracking-[0.22em] text-amber uppercase"
 			>{collection.name}</span
 		>
-		<span class="font-display text-[18px] font-normal tracking-[0.01em]">{product.name}</span>
+		<span class="font-display text-[18px] font-normal tracking-[0.01em] text-text-primary"
+			>{product.name}</span
+		>
 		<div class="mt-1.5 flex items-center justify-between">
-			<span class="text-[12px] font-medium tracking-[0.04em]">{product.price}</span>
+			<span class="text-[12px] font-medium tracking-[0.04em] text-text-primary"
+				>{product.price}</span
+			>
 			<button
 				class="rounded-full border-[0.5px] border-hairline bg-transparent px-3 py-[7px]
 				       font-sans text-[9px] font-medium tracking-[0.2em] text-text-secondary uppercase

@@ -26,7 +26,7 @@
 		{numeral}
 	</div>
 	<div>
-		<h4 class="m-0 font-display text-[20px] font-normal tracking-[0.005em]">
+		<h4 class="m-0 font-display text-[20px] font-normal tracking-[0.005em] text-text-primary">
 			{title}
 		</h4>
 		<p

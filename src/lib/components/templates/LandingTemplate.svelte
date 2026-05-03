@@ -11,11 +11,11 @@
 	} from '$lib/components';
 </script>
 
-<Announce />
 <Nav />
 
 <main class="flex flex-col">
 	<HeroPlate />
+	<Announce />
 	<Collections />
 	<Craft />
 	<Manifesto />
