@@ -16,9 +16,12 @@ export { default as ProductCard } from './molecules/ProductCard.svelte';
 
 export { default as CraftItem } from './molecules/CraftItem.svelte';
 export { default as ManifestoSignature } from './molecules/ManifestoSignature.svelte';
+export { default as StockistRow } from './molecules/StockistRow.svelte';
+export { default as WorldMap } from './molecules/WorldMap.svelte';
 
 export { default as Collections } from './organisms/Collections.svelte';
 export { default as Craft } from './organisms/Craft.svelte';
 export { default as HeroPlate } from './organisms/HeroPlate.svelte';
 export { default as Manifesto } from './organisms/Manifesto.svelte';
 export { default as Nav } from './organisms/Nav.svelte';
+export { default as Stockists } from './organisms/Stockists.svelte';

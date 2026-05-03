@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Craft, HeroPlate, Manifesto, Nav } from '$lib/components';
+	import { Craft, HeroPlate, Manifesto, Nav, Stockists } from '$lib/components';
 </script>
 
 <Nav />
@@ -8,4 +8,5 @@
 	<HeroPlate />
 	<Craft />
 	<Manifesto />
+	<Stockists />
 </main>
