@@ -28,3 +28,5 @@ export { default as HeroPlate } from './organisms/HeroPlate.svelte';
 export { default as Manifesto } from './organisms/Manifesto.svelte';
 export { default as Nav } from './organisms/Nav.svelte';
 export { default as Stockists } from './organisms/Stockists.svelte';
+
+export { default as LandingTemplate } from './templates/LandingTemplate.svelte';

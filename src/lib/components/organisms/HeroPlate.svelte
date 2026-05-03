@@ -12,12 +12,12 @@
 
 <section class="hero-plate relative pt-24 pb-[90px]">
 	<div
-		class="mx-auto grid max-w-[1280px] grid-cols-1 items-stretch gap-0 px-9
-		       md:[min-height:88vh] md:grid-cols-2"
+		class="mx-auto grid max-w-[1280px] grid-cols-2 items-stretch gap-0 px-9
+		       max-[880px]:grid-cols-1 min-[881px]:min-h-[88vh]"
 	>
 		<div
 			class="flex flex-col justify-center gap-6 py-20 pr-0
-			       md:border-r md:border-hairline md:pr-[60px]"
+			       min-[881px]:border-r min-[881px]:border-hairline min-[881px]:pr-[60px]"
 		>
 			<Eyebrow>Spring Collection — MMXXIV</Eyebrow>
 			<h1
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-		<div class="grid grid-rows-[1fr_auto] gap-6 py-20 pl-0 md:pl-[60px]">
+		<div class="grid grid-rows-[1fr_auto] gap-6 py-20 pl-0 min-[881px]:pl-[60px]">
 			<div
 				class="photo-stripes relative min-h-[380px] overflow-hidden rounded-[4px]
 				       border-[0.5px] border-hairline bg-rose-bg"
