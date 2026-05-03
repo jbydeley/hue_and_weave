@@ -1,2 +1,132 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	/* ── Atelier (warm cream) — SSR / no-JS default ─────────────────────────
+	   Theme overrides live in [data-theme] blocks below.
+	   Light / dark mapping: src/lib/theme.ts                                 */
+
+	/* Palette */
+	--color-amber: #c17b3a;
+	--color-jade: #4a8b7a;
+	--color-violet: #7b6aaf;
+	--color-blush: #d4537e;
+	--color-midnight: #1c1a17;
+	--color-cream: #faf7f2;
+	--color-off-white: #f5f2ec;
+
+	/* Section backgrounds */
+	--color-soleil-bg: #fdf5ee;
+	--color-foret-bg: #eef5f3;
+	--color-crepuscule-bg: #f2f0f8;
+	--color-rose-bg: #fbf0f4;
+
+	/* Semantic */
+	--color-text-primary: #1c1a17;
+	--color-text-secondary: #5a554c;
+	--color-text-tertiary: #8e887c;
+	--color-hairline: rgba(28, 26, 23, 0.14);
+	--color-hairline-soft: rgba(28, 26, 23, 0.08);
+
+	/* UI backgrounds */
+	--color-bg: #faf7f2;
+	--color-surface: #faf7f2;
+	--color-nav-bg-condensed: rgba(250, 247, 242, 0.82);
+
+	/* Manifesto section */
+	--color-manifesto-bg: #1c1a17;
+	--color-manifesto-text: #f1ece3;
+	--color-manifesto-accent: #e2a875;
+
+	/* Announcement bar */
+	--color-announce-bg: #1c1a17;
+	--color-announce-text: rgba(255, 255, 255, 0.55);
+
+	/* Typography */
+	--font-display: 'Cormorant Garamond', 'Cormorant', Georgia, serif;
+	--font-sans: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+/* ── Charcoal (dark) ──────────────────────────────────────────────────────── */
+[data-theme='charcoal'] {
+	--color-amber: #e2a875;
+	--color-jade: #7cb0a1;
+	--color-violet: #a092c5;
+	--color-blush: #e489a5;
+	--color-midnight: #0e0d0b;
+	--color-cream: #1a1916;
+	--color-off-white: #15140f;
+	--color-soleil-bg: #26211b;
+	--color-foret-bg: #1b2421;
+	--color-crepuscule-bg: #1f1d27;
+	--color-rose-bg: #241b20;
+	--color-text-primary: #ede8de;
+	--color-text-secondary: #a8a296;
+	--color-text-tertiary: #6f6a5e;
+	--color-hairline: rgba(237, 232, 222, 0.12);
+	--color-hairline-soft: rgba(237, 232, 222, 0.06);
+	--color-bg: #15140f;
+	--color-surface: #1a1916;
+	--color-nav-bg-condensed: rgba(21, 20, 15, 0.85);
+	--color-manifesto-bg: #0e0d0b;
+	--color-manifesto-text: #ede8de;
+	--color-manifesto-accent: #e2a875;
+	--color-announce-bg: #0e0d0b;
+	--color-announce-text: rgba(237, 232, 222, 0.55);
+}
+
+/* ── Royal (deep blue + champagne) ───────────────────────────────────────── */
+[data-theme='royal'] {
+	--color-amber: #b8923b;
+	--color-jade: #7b96b8;
+	--color-violet: #5c4a7c;
+	--color-blush: #a6536b;
+	--color-midnight: #16203a;
+	--color-cream: #f4efe3;
+	--color-off-white: #eae3d2;
+	--color-soleil-bg: #f4ebd6;
+	--color-foret-bg: #e3e8ec;
+	--color-crepuscule-bg: #e5e1ec;
+	--color-rose-bg: #efdedf;
+	--color-text-primary: #16203a;
+	--color-text-secondary: #4b5468;
+	--color-text-tertiary: #8a8e9a;
+	--color-hairline: rgba(22, 32, 58, 0.16);
+	--color-hairline-soft: rgba(22, 32, 58, 0.08);
+	--color-bg: #f4efe3;
+	--color-surface: #f4efe3;
+	--color-nav-bg-condensed: rgba(244, 239, 227, 0.85);
+	--color-manifesto-bg: #16203a;
+	--color-manifesto-text: #f4efe3;
+	--color-manifesto-accent: #d4b36a;
+	--color-announce-bg: #16203a;
+	--color-announce-text: rgba(244, 239, 227, 0.6);
+}
+
+/* ── Glamping (luxe forest) ───────────────────────────────────────────────── */
+[data-theme='glamping'] {
+	--color-amber: #9b6f2a;
+	--color-jade: #3f5743;
+	--color-violet: #6e5639;
+	--color-blush: #a35e3f;
+	--color-midnight: #2a2620;
+	--color-cream: #efe6d2;
+	--color-off-white: #e5dbc2;
+	--color-soleil-bg: #e8d7b0;
+	--color-foret-bg: #d8ddc9;
+	--color-crepuscule-bg: #d9cfb8;
+	--color-rose-bg: #e5c9b5;
+	--color-text-primary: #2a2620;
+	--color-text-secondary: #5a5246;
+	--color-text-tertiary: #8a8170;
+	--color-hairline: rgba(42, 38, 32, 0.18);
+	--color-hairline-soft: rgba(42, 38, 32, 0.09);
+	--color-bg: #efe6d2;
+	--color-surface: #efe6d2;
+	--color-nav-bg-condensed: rgba(239, 230, 210, 0.85);
+	--color-manifesto-bg: #3f5743;
+	--color-manifesto-text: #efe6d2;
+	--color-manifesto-accent: #c9a55e;
+	--color-announce-bg: #2a2620;
+	--color-announce-text: rgba(239, 230, 210, 0.6);
+}
