@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { Craft, HeroPlate, Manifesto, Nav, Stockists } from '$lib/components';
+	import { Announce, Craft, Footer, HeroPlate, Manifesto, Nav, Stockists } from '$lib/components';
 </script>
 
 <Nav />
+
+<Announce />
 
 <main class="flex flex-col">
 	<HeroPlate />
@@ -10,3 +12,5 @@
 	<Manifesto />
 	<Stockists />
 </main>
+
+<Footer />
