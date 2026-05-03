@@ -12,4 +12,5 @@ export { default as Wordmark } from './atoms/Wordmark.svelte';
 export { default as NavLogo } from './molecules/NavLogo.svelte';
 export { default as NavLinks } from './molecules/NavLinks.svelte';
 
+export { default as HeroPlate } from './organisms/HeroPlate.svelte';
 export { default as Nav } from './organisms/Nav.svelte';
