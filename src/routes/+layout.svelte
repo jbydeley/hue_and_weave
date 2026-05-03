@@ -9,7 +9,10 @@
 	$effect(() => {
 		const mq = window.matchMedia('(prefers-color-scheme: dark)');
 		const apply = (dark: boolean) => {
-			document.documentElement.setAttribute('data-theme', dark ? themeConfig.dark : themeConfig.light);
+			document.documentElement.setAttribute(
+				'data-theme',
+				dark ? themeConfig.dark : themeConfig.light
+			);
 		};
 		apply(mq.matches);
 		const handler = (e: MediaQueryListEvent) => apply(e.matches);

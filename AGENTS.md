@@ -9,8 +9,11 @@
 ## Rules
 
 ### 1. 1 Intent = 1 Commit
+
 ### 2. Use SvelteKit and Svelte 5. Always use Svelte runes. We never use Svelte 4 non-rune implementation.
+
 ### 3. Use TailwindCSS 4. Always use the latest and most idiomatic way of writing TailwindCSS.
+
 ### 4. Do not take shortcuts. Do not skip steps.
 
 You are able to use the Svelte MCP server, where you have access to comprehensive Svelte 5 and SvelteKit documentation. Here's how to use the available tools effectively:

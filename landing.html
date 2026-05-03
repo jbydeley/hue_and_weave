@@ -1,0 +1,1345 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Hue & Weave — Color is the craft.</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+			rel="stylesheet"
+		/>
+
+		<style>
+			:root{
+			  --amber:#C17B3A;
+			  --jade:#4A8B7A;
+			  --violet:#7B6AAF;
+			  --blush:#D4537E;
+			  --midnight:#1C1A17;
+			  --cream:#FAF7F2;
+			  --off-white:#F5F2EC;
+			  --soleil-bg:#FDF5EE;
+			  --foret-bg:#EEF5F3;
+			  --crepuscule-bg:#F2F0F8;
+			  --rose-bg:#FBF0F4;
+
+			  --text-primary:#1C1A17;
+			  --text-secondary:#5A554C;
+			  --text-tertiary:#8E887C;
+			  --hairline:rgba(28,26,23,0.14);
+			  --hairline-soft:rgba(28,26,23,0.08);
+
+			  --bg:var(--cream);
+			  --surface:var(--cream);
+			  --nav-bg-condensed:rgba(250,247,242,0.82);
+			  --manifesto-bg:#1C1A17;
+			  --manifesto-text:#F1ECE3;
+			  --manifesto-accent:#E2A875;
+			  --announce-bg:#1C1A17;
+			  --announce-text:rgba(255,255,255,0.55);
+
+			  --display: "Cormorant Garamond", "Cormorant", Georgia, serif;
+			  --sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+			}
+
+			/* ─────── Theme: Charcoal (dark) ─────── */
+			body[data-theme="charcoal"], html[data-theme="charcoal"]{
+			  --amber:#E2A875;
+			  --jade:#7CB0A1;
+			  --violet:#A092C5;
+			  --blush:#E489A5;
+			  --midnight:#0E0D0B;
+			  --cream:#1A1916;
+			  --off-white:#15140F;
+			  --soleil-bg:#26211B;
+			  --foret-bg:#1B2421;
+			  --crepuscule-bg:#1F1D27;
+			  --rose-bg:#241B20;
+			  --text-primary:#EDE8DE;
+			  --text-secondary:#A8A296;
+			  --text-tertiary:#6F6A5E;
+			  --hairline:rgba(237,232,222,0.12);
+			  --hairline-soft:rgba(237,232,222,0.06);
+			  --bg:#15140F;
+			  --surface:#1A1916;
+			  --nav-bg-condensed:rgba(21,20,15,0.85);
+			  --manifesto-bg:#0E0D0B;
+			  --manifesto-text:#EDE8DE;
+			  --manifesto-accent:#E2A875;
+			  --announce-bg:#0E0D0B;
+			  --announce-text:rgba(237,232,222,0.55);
+			}
+
+			/* ─────── Theme: Royal (deep blue + champagne) ─────── */
+			body[data-theme="royal"], html[data-theme="royal"]{
+			  --amber:#B8923B;        /* champagne gold */
+			  --jade:#7B96B8;         /* slate sky */
+			  --violet:#5C4A7C;       /* aubergine */
+			  --blush:#A6536B;        /* claret */
+			  --midnight:#16203A;     /* royal midnight */
+			  --cream:#F4EFE3;        /* parchment */
+			  --off-white:#EAE3D2;
+			  --soleil-bg:#F4EBD6;
+			  --foret-bg:#E3E8EC;
+			  --crepuscule-bg:#E5E1EC;
+			  --rose-bg:#EFDEDF;
+			  --text-primary:#16203A;
+			  --text-secondary:#4B5468;
+			  --text-tertiary:#8A8E9A;
+			  --hairline:rgba(22,32,58,0.16);
+			  --hairline-soft:rgba(22,32,58,0.08);
+			  --bg:#F4EFE3;
+			  --surface:#F4EFE3;
+			  --nav-bg-condensed:rgba(244,239,227,0.85);
+			  --manifesto-bg:#16203A;
+			  --manifesto-text:#F4EFE3;
+			  --manifesto-accent:#D4B36A;
+			  --announce-bg:#16203A;
+			  --announce-text:rgba(244,239,227,0.6);
+			}
+
+			/* ─────── Theme: Glamping (luxe forest) ─────── */
+			body[data-theme="glamping"], html[data-theme="glamping"]{
+			  --amber:#9B6F2A;        /* aged brass */
+			  --jade:#3F5743;         /* deep moss */
+			  --violet:#6E5639;       /* tanned leather */
+			  --blush:#A35E3F;        /* terracotta */
+			  --midnight:#2A2620;     /* tent shadow */
+			  --cream:#EFE6D2;        /* canvas */
+			  --off-white:#E5DBC2;
+			  --soleil-bg:#E8D7B0;
+			  --foret-bg:#D8DDC9;
+			  --crepuscule-bg:#D9CFB8;
+			  --rose-bg:#E5C9B5;
+			  --text-primary:#2A2620;
+			  --text-secondary:#5A5246;
+			  --text-tertiary:#8A8170;
+			  --hairline:rgba(42,38,32,0.18);
+			  --hairline-soft:rgba(42,38,32,0.09);
+			  --bg:#EFE6D2;
+			  --surface:#EFE6D2;
+			  --nav-bg-condensed:rgba(239,230,210,0.85);
+			  --manifesto-bg:#3F5743;
+			  --manifesto-text:#EFE6D2;
+			  --manifesto-accent:#C9A55E;
+			  --announce-bg:#2A2620;
+			  --announce-text:rgba(239,230,210,0.6);
+			}
+
+			*{box-sizing:border-box}
+			html,body{margin:0;padding:0}
+			html{background:var(--bg);transition:background .35s ease}
+			body{
+			  background:var(--bg) !important;
+			  color:var(--text-primary);
+			  font-family:var(--sans);
+			  font-weight:300;
+			  -webkit-font-smoothing:antialiased;
+			  -moz-osx-font-smoothing:grayscale;
+			  text-rendering:optimizeLegibility;
+			  transition: background .35s ease, color .35s ease;
+			}
+			img{display:block;max-width:100%}
+			button{font-family:inherit;cursor:default}
+			a{color:inherit;text-decoration:none}
+
+			.display{font-family:var(--display);font-weight:300;letter-spacing:0.01em}
+			.display-italic{font-family:var(--display);font-weight:300;font-style:italic}
+			.eyebrow{
+			  font-family:var(--sans);font-weight:500;font-size:9.5px;
+			  letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);
+			}
+			.small-caps{
+			  font-family:var(--sans);font-weight:500;font-size:10px;
+			  letter-spacing:0.18em;text-transform:uppercase;
+			}
+
+			/* ───── Nav ───── */
+			.nav{
+			  position:fixed;top:0;left:0;right:0;z-index:50;
+			  display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
+			  padding:22px 36px;
+			  background:rgba(250,247,242,0);
+			  border-bottom:0.5px solid transparent;
+			  transition: background .35s ease, padding .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+			}
+			.nav.condensed{
+			  background:var(--nav-bg-condensed);
+			  backdrop-filter:blur(18px) saturate(160%);
+			  -webkit-backdrop-filter:blur(18px) saturate(160%);
+			  padding:12px 36px;
+			  border-bottom:0.5px solid var(--hairline);
+			}
+			.nav-logo{display:flex;align-items:center;gap:10px}
+			.nav-mark{
+			  width:22px;height:22px;display:grid;
+			  grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
+			  gap:1.5px;border-radius:4px;overflow:hidden;
+			}
+			.nav-mark > i{display:block;border-radius:1.5px}
+			.nav-wordmark{
+			  font-family:var(--display);font-style:italic;font-weight:300;
+			  font-size:18px;letter-spacing:0.02em;
+			}
+			.nav-wordmark .amp{color:var(--amber);font-weight:400}
+			.nav-links{display:flex;gap:34px;justify-content:center}
+			.nav-links a{
+			  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+			  font-weight:400;color:var(--text-secondary);
+			  transition:color .25s ease;
+			}
+			.nav-links a:hover{color:var(--amber)}
+			.nav-cta{display:flex;justify-content:flex-end;align-items:center;gap:18px}
+			.nav-cta .small-caps{color:var(--text-tertiary)}
+
+			/* ───── Layout ───── */
+			main{display:flex;flex-direction:column}
+			section{position:relative}
+			.container{max-width:1280px;margin:0 auto;padding:0 36px}
+			.hairline-top{border-top:0.5px solid var(--hairline)}
+			.hairline-bottom{border-bottom:0.5px solid var(--hairline)}
+
+			/* Section eyebrow + title pattern */
+			.sec-head{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+			.sec-title{font-family:var(--display);font-weight:300;font-size:54px;line-height:1.05;letter-spacing:0.005em;margin:0}
+			.sec-title em{font-style:italic;font-weight:300}
+			.sec-sub{font-family:var(--display);font-style:italic;font-weight:300;font-size:18px;color:var(--text-secondary);margin:0;max-width:520px}
+
+			/* ───── Buttons ───── */
+			.btn{
+			  display:inline-flex;align-items:center;gap:8px;
+			  font-family:var(--sans);font-weight:500;font-size:11px;
+			  letter-spacing:0.2em;text-transform:uppercase;
+			  padding:12px 18px;border-radius:999px;border:0.5px solid transparent;
+			  transition:all .25s ease;
+			}
+			.btn-primary{background:var(--amber);color:#fff;border-color:var(--amber)}
+			.btn-primary:hover{background:#a8682d;border-color:#a8682d}
+			.btn-ghost{background:transparent;color:var(--text-primary);border-color:var(--hairline)}
+			.btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+			/* ───── Bracelet SVG accents ───── */
+			.bracelet{width:100%;height:100%;display:block}
+
+			/* ───── Tweak: card style ───── */
+			body[data-card="bordered"] .product-card{border:0.5px solid var(--hairline)}
+			body[data-card="bordered"] .product-card:hover{border-color:var(--amber)}
+			body[data-card="minimal"] .product-card{border:0.5px solid transparent}
+			body[data-card="minimal"] .product-card .product-foot{border-top:0.5px solid var(--hairline-soft)}
+			body[data-card="minimal"] .product-card:hover{transform:translateY(-2px)}
+
+			/* ───── Tweak: cursor accent ───── */
+			.cursor-dot{
+			  position:fixed;top:0;left:0;width:18px;height:18px;border-radius:50%;
+			  pointer-events:none;z-index:9999;mix-blend-mode:multiply;
+			  transform:translate(-50%,-50%) scale(0.6);opacity:0;
+			  transition:opacity .3s ease, transform .25s ease, background-color .35s ease;
+			  background:var(--amber);
+			}
+			.cursor-dot.show{opacity:0.5;transform:translate(-50%,-50%) scale(1)}
+			@media (pointer:coarse){.cursor-dot{display:none}}
+
+			/* ───── Hero variants ───── */
+			.hero{padding:140px 0 90px;position:relative}
+			.hero-tagline{font-family:var(--display);font-style:italic;font-weight:300;color:var(--text-secondary);font-size:20px;margin:0}
+			.hero-eyebrow{margin-bottom:24px}
+
+			/* Variant A — Editorial: oversized italic word */
+			.hero-A{display:flex;flex-direction:column;align-items:center;text-align:center;gap:36px;padding-top:160px}
+			.hero-A h1{
+			  font-family:var(--display);font-weight:300;font-size:clamp(72px, 11vw, 168px);
+			  line-height:0.92;letter-spacing:-0.005em;margin:0;
+			}
+			.hero-A h1 em{font-style:italic;color:var(--amber)}
+			.hero-A .hero-bracelet{width:240px;height:120px;margin-top:8px}
+			.hero-A p{max-width:460px;font-family:var(--display);font-style:italic;font-size:19px;color:var(--text-secondary);line-height:1.5;margin:0}
+
+			/* Variant B — Wordmark left, bracelet right */
+			.hero-B{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;padding-top:140px;padding-bottom:120px}
+			.hero-B .lhs{display:flex;flex-direction:column;gap:28px}
+			.hero-B .wordmark{
+			  font-family:var(--display);font-style:italic;font-weight:300;
+			  font-size:clamp(80px,9.5vw,140px);line-height:0.96;letter-spacing:0.005em;
+			}
+			.hero-B .wordmark .amp{color:var(--amber);font-weight:400}
+			.hero-B .lede{font-family:var(--display);font-style:italic;font-size:22px;color:var(--text-secondary);line-height:1.45;max-width:440px}
+			.hero-B .ctas{display:flex;gap:12px;margin-top:6px}
+			.hero-B .rhs{position:relative;aspect-ratio:4/5;background:var(--soleil-bg);border-radius:6px;overflow:hidden;border:0.5px solid var(--hairline)}
+			.hero-B .rhs svg{position:absolute;inset:0;width:100%;height:100%}
+			.hero-B .rhs .placeholder-tag{position:absolute;left:18px;bottom:18px;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.08em;color:var(--text-tertiary)}
+
+			/* Variant C — Quiet: tiny wordmark, single line */
+			.hero-C{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:80px;padding:200px 0 200px}
+			.hero-C .tiny-mark{display:flex;flex-direction:column;align-items:center;gap:10px}
+			.hero-C .tiny-mark .wm{font-family:var(--display);font-style:italic;font-weight:300;font-size:28px}
+			.hero-C .tiny-mark .wm .amp{color:var(--amber)}
+			.hero-C h1{font-family:var(--display);font-weight:300;font-size:clamp(40px,5.5vw,76px);line-height:1.1;letter-spacing:0.005em;margin:0;max-width:14ch}
+			.hero-C h1 em{font-style:italic;color:var(--amber)}
+
+			/* Variant D — Split editorial with photo zone */
+			.hero-D{display:grid;grid-template-columns:1fr 1fr;gap:0;padding-top:96px;min-height:88vh;align-items:stretch}
+			.hero-D .lhs{padding:80px 60px 80px 0;display:flex;flex-direction:column;justify-content:center;gap:24px;border-right:0.5px solid var(--hairline)}
+			.hero-D .lhs h1{font-family:var(--display);font-weight:300;font-size:clamp(56px,6.5vw,96px);line-height:1.0;margin:0}
+			.hero-D .lhs h1 em{font-style:italic;color:var(--amber)}
+			.hero-D .lhs p{font-family:var(--display);font-style:italic;font-size:20px;color:var(--text-secondary);max-width:440px;margin:0;line-height:1.5}
+			.hero-D .rhs{padding:80px 0 80px 60px;display:grid;grid-template-rows:1fr auto;gap:24px}
+			.hero-D .photo{background:var(--rose-bg);border:0.5px solid var(--hairline);border-radius:4px;position:relative;overflow:hidden;min-height:380px}
+			.hero-D .photo-cap{display:flex;justify-content:space-between;align-items:baseline;font-family:ui-monospace,Menlo,monospace;font-size:10px;letter-spacing:0.08em;color:var(--text-tertiary)}
+
+			/* ───── Announcement bar ───── */
+			.announce{
+			  background:var(--announce-bg);color:var(--announce-text);
+			  padding:14px 0;overflow:hidden;
+			}
+			.announce-track{display:flex;justify-content:center;gap:28px;align-items:center;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);font-weight:500}
+			.announce-track span.dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,0.3)}
+
+			/* ───── Collections section ───── */
+			.collections{padding:120px 0 140px}
+			.col-head{margin-bottom:64px}
+			.tabs{display:flex;justify-content:center;gap:0;margin:48px auto 56px;border-top:0.5px solid var(--hairline);border-bottom:0.5px solid var(--hairline);max-width:980px}
+			.tab{
+			  flex:1;background:transparent;border:0;padding:18px 12px;
+			  display:flex;flex-direction:column;align-items:center;gap:8px;
+			  font-family:inherit;color:var(--text-secondary);
+			  border-bottom:1px solid transparent;margin-bottom:-0.5px;
+			  transition:color .25s ease,border-color .25s ease;
+			}
+			.tab + .tab{border-left:0.5px solid var(--hairline)}
+			.tab .tab-name{font-family:var(--display);font-style:italic;font-weight:300;font-size:22px;letter-spacing:0.01em}
+			.tab .tab-meta{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-tertiary)}
+			.tab .swatch{width:10px;height:10px;border-radius:50%;margin-bottom:2px}
+			.tab.active{color:var(--text-primary);border-bottom-color:var(--amber)}
+			.tab.active .tab-meta{color:var(--amber)}
+
+			.product-row{
+			  display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:14px;
+			  align-items:stretch;
+			}
+			.product-card{
+			  background:var(--surface);
+			  border-radius:6px;overflow:hidden;
+			  transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease;
+			  display:flex;flex-direction:column;
+			}
+			.product-card:hover{transform:translateY(-2px)}
+			.product-visual{
+			  aspect-ratio:5/4;
+			  display:flex;align-items:center;justify-content:center;
+			  position:relative;
+			}
+			.product-visual svg{width:78%;height:auto}
+			.product-foot{
+			  padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;
+			  border-top:0.5px solid var(--hairline-soft);
+			}
+			.product-foot .col-label{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);font-weight:500}
+			.product-foot .pname{font-family:var(--display);font-weight:400;font-size:18px;letter-spacing:0.01em}
+			.product-foot .row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+			.product-foot .price{font-size:12px;font-weight:500;letter-spacing:0.04em}
+			.product-foot .add{
+			  font-size:9px;letter-spacing:0.2em;text-transform:uppercase;font-weight:500;
+			  border:0.5px solid var(--hairline);background:transparent;
+			  padding:7px 12px;border-radius:999px;color:var(--text-secondary);
+			  transition:all .25s ease;
+			}
+			.product-foot .add:hover{border-color:var(--amber);color:var(--amber)}
+
+			/* ───── The Craft ───── */
+			.craft{padding:130px 0;background:var(--off-white);border-top:0.5px solid var(--hairline);border-bottom:0.5px solid var(--hairline)}
+			.craft-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;margin-top:72px}
+			.craft-photo{aspect-ratio:4/5;background:var(--foret-bg);border:0.5px solid var(--hairline);border-radius:4px;position:relative;overflow:hidden}
+			.craft-list{display:flex;flex-direction:column;gap:36px}
+			.craft-item{display:grid;grid-template-columns:48px 1fr;gap:20px;align-items:start}
+			.craft-icon{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-size:16px;color:var(--text-primary)}
+			.craft-item h4{font-family:var(--display);font-weight:400;font-size:20px;margin:0 0 6px;letter-spacing:0.005em}
+			.craft-item p{font-family:var(--sans);font-weight:300;font-size:13.5px;line-height:1.7;color:var(--text-secondary);margin:0;max-width:38ch}
+
+			/* ───── Manifesto ───── */
+			.manifesto{background:var(--manifesto-bg);color:var(--manifesto-text);padding:160px 0;text-align:center;transition:background .35s ease,color .35s ease}
+			.manifesto .eyebrow{color:var(--manifesto-accent)}
+			.manifesto h2{
+			  font-family:var(--display);font-weight:300;font-size:clamp(40px,5vw,68px);
+			  line-height:1.18;letter-spacing:0.005em;margin:32px auto 0;max-width:18ch;
+			}
+			.manifesto h2 em{font-style:italic;color:var(--manifesto-accent)}
+			.manifesto .signature{
+			  margin-top:56px;display:inline-flex;flex-direction:column;align-items:center;gap:6px;
+			  color:color-mix(in oklab, var(--manifesto-text) 55%, transparent);
+			}
+			.manifesto .signature .sig-mark{font-family:var(--display);font-style:italic;font-size:24px;color:var(--manifesto-accent)}
+			.manifesto .signature .sig-meta{font-size:10px;letter-spacing:0.22em;text-transform:uppercase}
+
+			/* ───── Footer ───── */
+			footer{background:var(--bg);padding:80px 0 40px;border-top:0.5px solid var(--hairline);transition:background .35s ease}
+			.ftr-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:64px;padding-bottom:64px;border-bottom:0.5px solid var(--hairline-soft)}
+			.ftr-brand .wm{font-family:var(--display);font-style:italic;font-weight:300;font-size:34px;letter-spacing:0.01em}
+			.ftr-brand .wm .amp{color:var(--amber);font-weight:400}
+			.ftr-brand p{font-family:var(--display);font-style:italic;font-size:15px;color:var(--text-secondary);margin:8px 0 0;max-width:30ch;line-height:1.55}
+			.ftr-col h5{font-family:var(--sans);font-weight:500;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-tertiary);margin:0 0 18px}
+			.ftr-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+			.ftr-col li{font-size:13px;font-weight:300;color:var(--text-secondary)}
+			.ftr-col li a:hover{color:var(--amber)}
+			.ftr-bot{display:flex;justify-content:space-between;align-items:center;padding-top:32px;font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-tertiary)}
+
+			/* ───── Stockists / map ───── */
+			.stockists{padding:120px 0 130px}
+			.map-wrap{margin-top:64px;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:center}
+			.map-svg{width:100%;height:auto;border:0.5px solid var(--hairline);border-radius:4px;background:var(--surface);padding:24px}
+			.stockist-list{display:flex;flex-direction:column;gap:0}
+			.stockist-list .row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;padding:18px 0;border-bottom:0.5px solid var(--hairline-soft)}
+			.stockist-list .row:first-child{border-top:0.5px solid var(--hairline-soft)}
+			.stockist-list .city{font-family:var(--display);font-style:italic;font-size:20px;font-weight:300}
+			.stockist-list .place{font-size:13px;color:var(--text-secondary);font-weight:300}
+			.stockist-list .country{font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-tertiary)}
+
+			/* Photo placeholder pattern */
+			.photo-stripes{
+			  background:
+			    repeating-linear-gradient(135deg, var(--hairline-soft) 0 1px, transparent 1px 14px);
+			}
+			}
+			.photo-tag{
+			  position:absolute;left:14px;bottom:14px;
+			  font-family:ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.08em;
+			  color:var(--text-tertiary);
+			}
+			.photo-corner{
+			  position:absolute;top:14px;right:14px;font-family:ui-monospace,Menlo,monospace;
+			  font-size:9px;letter-spacing:0.12em;color:var(--text-tertiary);text-transform:uppercase;
+			}
+
+			@media (max-width: 880px){
+			  .hero-B,.hero-D,.craft-grid,.map-wrap{grid-template-columns:1fr}
+			  .ftr-top{grid-template-columns:1fr 1fr;gap:36px}
+			  .product-row{grid-template-columns:repeat(2, minmax(0,1fr))}
+			  .nav-links{display:none}
+			}
+		</style>
+	</head>
+	<body data-card="bordered">
+		<div class="cursor-dot" id="cursorDot"></div>
+
+		<div id="root"></div>
+
+		<script
+			src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+			integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+			integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+			integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+			crossorigin="anonymous"
+		></script>
+
+		<script type="text/babel" src="tweaks-panel.jsx"></script>
+
+		<script type="text/babel" data-presets="react">
+			// Data for Hue & Weave — collections + bracelets + stockists
+			const COLLECTIONS = [
+				{
+					id: 'soleil',
+					name: 'Soleil',
+					sub: 'Warm tones, gathered at noon.',
+					color: '#C17B3A',
+					bg: 'var(--soleil-bg)',
+					products: [
+						{ name: 'Abricot', price: '$0.50', colors: ['#C17B3A', '#E0A26A', '#F2D7AB'] },
+						{ name: 'Miel', price: '$0.50', colors: ['#9C5E29', '#D89351', '#EFC084'] },
+						{ name: 'Curcuma', price: '$0.50', colors: ['#B6692C', '#E89B47', '#F4D08A'] }
+					]
+				},
+				{
+					id: 'foret',
+					name: 'Forêt',
+					sub: 'The hush of leaves after rain.',
+					color: '#4A8B7A',
+					bg: 'var(--foret-bg)',
+					products: [
+						{ name: 'Mousse', price: '$0.50', colors: ['#4A8B7A', '#7CB0A1', '#B5D4C9'] },
+						{ name: 'Sauge', price: '$0.50', colors: ['#3F7568', '#6FA192', '#A9C7BC'] },
+						{ name: 'Eucalypt', price: '$0.50', colors: ['#5A9A87', '#8FB9AC', '#C2DACF'] }
+					]
+				},
+				{
+					id: 'crepuscule',
+					name: 'Crépuscule',
+					sub: 'The hour before the lamps come on.',
+					color: '#7B6AAF',
+					bg: 'var(--crepuscule-bg)',
+					products: [
+						{ name: 'Iris', price: '$0.50', colors: ['#7B6AAF', '#A092C5', '#CCC2DD'] },
+						{ name: 'Lavande', price: '$0.50', colors: ['#6C5C9F', '#9286BC', '#C0B6D6'] },
+						{ name: 'Brume', price: '$0.50', colors: ['#8A7CB9', '#B0A6CD', '#D8D1E4'] }
+					]
+				},
+				{
+					id: 'rose',
+					name: 'Rosé',
+					sub: 'A blush, considered.',
+					color: '#D4537E',
+					bg: 'var(--rose-bg)',
+					products: [
+						{ name: 'Pivoine', price: '$0.50', colors: ['#D4537E', '#E489A5', '#F2BFCE'] },
+						{ name: 'Cerise', price: '$0.50', colors: ['#C04270', '#DA7A98', '#EDB1C2'] },
+						{ name: 'Aurore', price: '$0.50', colors: ['#DD6B92', '#EE9CB7', '#F8CDD7'] }
+					]
+				}
+			];
+
+			const STOCKISTS = [
+				{
+					city: 'Stayner',
+					place: 'Evangelical Camp — Scott St',
+					country: 'CA',
+					x: 200,
+					y: 245,
+					status: 'in-stock'
+				},
+				{
+					city: 'London',
+					place: 'Liberty — Carnaby',
+					country: 'UK',
+					x: 470,
+					y: 188,
+					status: 'sold-out'
+				},
+				{
+					city: 'New York',
+					place: 'Bergdorf Goodman — 5th Ave',
+					country: 'US',
+					x: 230,
+					y: 260,
+					status: 'sold-out'
+				},
+				{
+					city: 'Paris',
+					place: 'Le Bon Marché — Rive Gauche',
+					country: 'FR',
+					x: 510,
+					y: 220,
+					status: 'sold-out'
+				},
+				{
+					city: 'Tokyo',
+					place: 'Isetan — Shinjuku',
+					country: 'JP',
+					x: 870,
+					y: 270,
+					status: 'sold-out'
+				},
+				{
+					city: 'Copenhagen',
+					place: 'Stilleben — Frederiksberggade',
+					country: 'DK',
+					x: 545,
+					y: 168,
+					status: 'sold-out'
+				},
+				{
+					city: 'Melbourne',
+					place: 'Craft Victoria',
+					country: 'AU',
+					x: 855,
+					y: 470,
+					status: 'sold-out'
+				}
+			];
+
+			window.HW_DATA = { COLLECTIONS, STOCKISTS };
+		</script>
+		<script type="text/babel" data-presets="react">
+			// Bracelet SVG component — supports two illustration styles: "ellipse" and "woven"
+
+			function Bracelet({ colors, style = 'ellipse', size = 1, rotation = -8 }) {
+				const [c1, c2, c3] = colors;
+				const cx = 140,
+					cy = 80;
+				const rx = 110,
+					ry = 52;
+
+				if (style === 'ellipse') {
+					return (
+						<svg viewBox="0 0 280 160" className="bracelet" preserveAspectRatio="xMidYMid meet">
+							<g transform={`rotate(${rotation} ${cx} ${cy})`}>
+								{/* faint outer halo */}
+								<ellipse
+									cx={cx}
+									cy={cy}
+									rx={rx + 6}
+									ry={ry + 6}
+									fill="none"
+									stroke={c1}
+									strokeOpacity="0.08"
+									strokeWidth="1"
+								/>
+								{/* main band */}
+								<ellipse
+									cx={cx}
+									cy={cy}
+									rx={rx}
+									ry={ry}
+									fill="none"
+									stroke={c1}
+									strokeWidth="6"
+									strokeLinecap="round"
+								/>
+								{/* loom weave (dashed) */}
+								<ellipse
+									cx={cx}
+									cy={cy}
+									rx={rx - 5}
+									ry={ry - 5}
+									fill="none"
+									stroke={c2}
+									strokeWidth="1.6"
+									strokeDasharray="3 3"
+									opacity="0.7"
+								/>
+								{/* inner depth */}
+								<ellipse
+									cx={cx}
+									cy={cy}
+									rx={rx - 14}
+									ry={ry - 14}
+									fill="none"
+									stroke={c3}
+									strokeWidth="1"
+									opacity="0.4"
+								/>
+							</g>
+						</svg>
+					);
+				}
+
+				// woven style — dotted bead-pattern around an ellipse path
+				const beads = 56;
+				const dots = [];
+				for (let i = 0; i < beads; i++) {
+					const t = (i / beads) * Math.PI * 2;
+					const x = cx + Math.cos(t) * rx;
+					const y = cy + Math.sin(t) * ry;
+					const col = i % 3 === 0 ? c1 : i % 3 === 1 ? c2 : c3;
+					const r = i % 3 === 0 ? 3.4 : 2.6;
+					dots.push(
+						<circle key={i} cx={x} cy={y} r={r} fill={col} opacity={i % 3 === 0 ? 1 : 0.85} />
+					);
+				}
+				// inner thread line
+				const innerDots = [];
+				for (let i = 0; i < 36; i++) {
+					const t = (i / 36) * Math.PI * 2;
+					const x = cx + Math.cos(t) * (rx - 12);
+					const y = cy + Math.sin(t) * (ry - 12);
+					innerDots.push(<circle key={'i' + i} cx={x} cy={y} r="1" fill={c3} opacity="0.5" />);
+				}
+
+				return (
+					<svg viewBox="0 0 280 160" className="bracelet" preserveAspectRatio="xMidYMid meet">
+						<g transform={`rotate(${rotation} ${cx} ${cy})`}>
+							<ellipse
+								cx={cx}
+								cy={cy}
+								rx={rx}
+								ry={ry}
+								fill="none"
+								stroke={c1}
+								strokeOpacity="0.14"
+								strokeWidth="0.6"
+							/>
+							{innerDots}
+							{dots}
+						</g>
+					</svg>
+				);
+			}
+
+			window.Bracelet = Bracelet;
+		</script>
+		<script type="text/babel" data-presets="react">
+			// Sections — Nav, Hero variants, Announcement, Collections, Craft, Manifesto, Stockists, Footer
+
+			const HW_COLLECTIONS = window.HW_DATA.COLLECTIONS;
+			const HW_STOCKISTS = window.HW_DATA.STOCKISTS;
+
+			// ─────── Nav ───────
+			function Nav() {
+				const [scrolled, setScrolled] = React.useState(false);
+				React.useEffect(() => {
+					const onScroll = () => setScrolled(window.scrollY > 32);
+					onScroll();
+					window.addEventListener('scroll', onScroll, { passive: true });
+					return () => window.removeEventListener('scroll', onScroll);
+				}, []);
+
+				return (
+					<nav className={'nav' + (scrolled ? ' condensed' : '')}>
+						<div className="nav-logo">
+							<div className="nav-mark" aria-hidden="true">
+								<i style={{ background: '#C17B3A' }} />
+								<i style={{ background: '#4A8B7A' }} />
+								<i style={{ background: '#D4537E' }} />
+								<i style={{ background: '#7B6AAF' }} />
+							</div>
+							<span className="nav-wordmark">
+								Hue<span className="amp"> & </span>Weave
+							</span>
+						</div>
+						<div className="nav-links">
+							<a href="#collections">Collections</a>
+							<a href="#craft">The Craft</a>
+							<a href="#manifesto">Manifesto</a>
+							<a href="#stockists">Stockists</a>
+						</div>
+						<div className="nav-cta">
+							<span className="small-caps" style={{ color: 'var(--text-tertiary)' }}>
+								Est. 2024
+							</span>
+							<a href="#stockists" className="btn btn-ghost">
+								Find a stockist
+							</a>
+						</div>
+					</nav>
+				);
+			}
+
+			// ─────── Announcement bar ───────
+			function Announce() {
+				return (
+					<div className="announce">
+						<div className="announce-track">
+							<span>New · The Crépuscule Collection</span>
+							<span className="dot" />
+							<span>Now stocked in 7 cities</span>
+							<span className="dot" />
+							<span>Hand-loomed in New Hamburg</span>
+							<span className="dot" />
+							<span>$0.50 — and not a cent less</span>
+						</div>
+					</div>
+				);
+			}
+
+			// ─────── Hero variants ───────
+			function Hero({ variant }) {
+				const featured = HW_COLLECTIONS[0]; // Soleil
+
+				if (variant === 'B') {
+					return (
+						<section className="hero">
+							<div className="hero-B container">
+								<div className="lhs">
+									<div className="eyebrow hero-eyebrow">Atelier No. 01 — New Hamburg</div>
+									<div className="wordmark">
+										Hue<span className="amp"> & </span>Weave
+									</div>
+									<p className="lede">
+										A atelier of loom bracelets, considered with the same patience as silk.
+									</p>
+									<div className="ctas">
+										<a className="btn btn-primary" href="#collections">
+											View collections
+										</a>
+										<a className="btn btn-ghost" href="#craft">
+											The craft
+										</a>
+									</div>
+								</div>
+								<div className="rhs photo-stripes">
+									<Bracelet
+										colors={featured.products[0].colors}
+										style={window.__braceletStyle || 'ellipse'}
+										rotation={-12}
+									/>
+									<span className="placeholder-tag">// the soleil bracelet — abricot</span>
+								</div>
+							</div>
+						</section>
+					);
+				}
+
+				if (variant === 'C') {
+					return (
+						<section className="hero">
+							<div className="hero-C container">
+								<div className="tiny-mark">
+									<span className="wm">
+										Hue<span className="amp"> & </span>Weave
+									</span>
+									<span className="small-caps" style={{ color: 'var(--text-tertiary)' }}>
+										Wristwear · Est. 2024
+									</span>
+								</div>
+								<h1>
+									color is the <em>craft</em>.
+								</h1>
+								<a className="btn btn-ghost" href="#collections">
+									View the four collections
+								</a>
+							</div>
+						</section>
+					);
+				}
+
+				if (variant === 'D') {
+					return (
+						<section className="hero">
+							<div className="hero-D container">
+								<div className="lhs">
+									<div className="eyebrow">Spring Collection — MMXXIV</div>
+									<h1>
+										Loomed with <em>intention</em>, worn without ceremony.
+									</h1>
+									<p>
+										Four collections, twelve bracelets, one quiet idea: that fifty cents of elastic
+										deserves the same care as anything else on the wrist.
+									</p>
+									<div style={{ display: 'flex', gap: 12, marginTop: 16 }}>
+										<a className="btn btn-primary" href="#collections">
+											Browse collections
+										</a>
+									</div>
+								</div>
+								<div className="rhs">
+									<div className="photo photo-stripes">
+										<span className="photo-corner">Plate I</span>
+										<Bracelet
+											colors={HW_COLLECTIONS[3].products[0].colors}
+											style={window.__braceletStyle || 'ellipse'}
+											rotation={-6}
+										/>
+										<span className="photo-tag">// hand portrait — wrist 03 / atelier light</span>
+									</div>
+									<div className="photo-cap">
+										<span>Photographed in natural light</span>
+										<span>New Hamburg, 04.MMXXIV</span>
+									</div>
+								</div>
+							</div>
+						</section>
+					);
+				}
+
+				// Variant A — Editorial centered
+				return (
+					<section className="hero">
+						<div className="hero-A container">
+							<div className="eyebrow">Hue & Weave — Atelier No. 01</div>
+							<h1>
+								color is the <em>craft</em>.
+							</h1>
+							<div className="hero-bracelet">
+								<Bracelet
+									colors={featured.products[0].colors}
+									style={window.__braceletStyle || 'ellipse'}
+									rotation={-10}
+								/>
+							</div>
+							<p>
+								A atelier devoted to the loom bracelet — four collections, hand-strung, fifty cents
+								the piece, and worth every consideration.
+							</p>
+						</div>
+					</section>
+				);
+			}
+
+			// ─────── Collections ───────
+			function Collections() {
+				const [active, setActive] = React.useState(HW_COLLECTIONS[0].id);
+				const col = HW_COLLECTIONS.find((c) => c.id === active);
+
+				// Tinted hover accent on tabs — set CSS var on body
+				const onTabHover = (color) => {
+					document.body.style.setProperty('--cursor-accent', color || '#C17B3A');
+				};
+
+				return (
+					<section className="collections" id="collections">
+						<div className="container">
+							<div className="sec-head col-head">
+								<span className="eyebrow">The Four Collections</span>
+								<h2 className="sec-title">
+									An atlas of <em>color</em>.
+								</h2>
+								<p className="sec-sub">
+									Each collection is named for an hour of the day, or a feeling we couldn't
+									otherwise place.
+								</p>
+							</div>
+
+							<div className="tabs" role="tablist">
+								{HW_COLLECTIONS.map((c) => (
+									<button
+										key={c.id}
+										role="tab"
+										aria-selected={c.id === active}
+										className={'tab' + (c.id === active ? ' active' : '')}
+										onClick={() => setActive(c.id)}
+										onMouseEnter={() => onTabHover(c.color)}
+										onMouseLeave={() => onTabHover(null)}
+									>
+										<span className="swatch" style={{ background: c.color }} />
+										<span className="tab-name">{c.name}</span>
+										<span className="tab-meta">
+											№ 0{HW_COLLECTIONS.indexOf(c) + 1} · {c.products.length} pieces
+										</span>
+									</button>
+								))}
+							</div>
+
+							<div className="product-row" key={active}>
+								{col.products.map((p, i) => (
+									<article className="product-card" key={p.name}>
+										<div className="product-visual" style={{ background: col.bg }}>
+											<Bracelet
+												colors={p.colors}
+												style={window.__braceletStyle || 'ellipse'}
+												rotation={-8 + (i - 1) * 4}
+											/>
+										</div>
+										<div className="product-foot">
+											<span className="col-label">{col.name}</span>
+											<span className="pname">{p.name}</span>
+											<div className="row">
+												<span className="price">{p.price}</span>
+												<button className="add">View</button>
+											</div>
+										</div>
+									</article>
+								))}
+							</div>
+						</div>
+					</section>
+				);
+			}
+
+			// ─────── The Craft ───────
+			function Craft() {
+				return (
+					<section className="craft" id="craft">
+						<div className="container">
+							<div className="sec-head">
+								<span className="eyebrow">The Craft</span>
+								<h2 className="sec-title">
+									A loom, a palette, <em>a point of view</em>.
+								</h2>
+								<p className="sec-sub">
+									Forty-three colors of elastic, sorted by hour of day, strung by hand on a pegboard
+									the size of a postcard.
+								</p>
+							</div>
+
+							<div className="craft-grid">
+								<div className="craft-photo photo-stripes">
+									<span className="photo-corner">Plate II</span>
+									<span className="photo-tag">// atelier still life — pegboard, 2026</span>
+								</div>
+								<div className="craft-list">
+									<div className="craft-item">
+										<div
+											className="craft-icon"
+											style={{ background: 'rgba(193,123,58,0.14)', color: '#C17B3A' }}
+										>
+											i.
+										</div>
+										<div>
+											<h4>The palette is curated, never assembled.</h4>
+											<p>
+												Each collection begins with a single colour observed in the world — the
+												inside of an apricot, a sage hedge after rain — and the rest are chosen to
+												keep it company.
+											</p>
+										</div>
+									</div>
+									<div className="craft-item">
+										<div
+											className="craft-icon"
+											style={{ background: 'rgba(74,139,122,0.14)', color: '#4A8B7A' }}
+										>
+											ii.
+										</div>
+										<div>
+											<h4>Strung by hand, on a pegboard.</h4>
+											<p>
+												The loom is a wooden board, the size of a postcard, with twenty-eight pins.
+												Each bracelet takes between four and seven minutes to weave.
+											</p>
+										</div>
+									</div>
+									<div className="craft-item">
+										<div
+											className="craft-icon"
+											style={{ background: 'rgba(123,106,175,0.14)', color: '#7B6AAF' }}
+										>
+											iii.
+										</div>
+										<div>
+											<h4>The price is fifty cents.</h4>
+											<p>
+												It is the price of the materials, plus a small consideration for the time.
+												We do not feel the need to say more about it.
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				);
+			}
+
+			// ─────── Manifesto ───────
+			function Manifesto() {
+				return (
+					<section className="manifesto" id="manifesto">
+						<div className="container">
+							<span className="eyebrow">Manifesto</span>
+							<h2>
+								We believe a wrist is a small canvas, and a small canvas deserves{' '}
+								<em>real attention</em>.
+							</h2>
+							<div className="signature">
+								<span className="sig-mark">— & —</span>
+								<span className="sig-meta">The Atelier of Hue & Weave</span>
+							</div>
+						</div>
+					</section>
+				);
+			}
+
+			// ─────── Stockists / Map ───────
+			function Stockists() {
+				const [hovered, setHovered] = React.useState(null);
+
+				return (
+					<section className="stockists" id="stockists">
+						<div className="container">
+							<div className="sec-head">
+								<span className="eyebrow">Stockists</span>
+								<h2 className="sec-title">
+									Found in seven <em>cities</em>.
+								</h2>
+								<p className="sec-sub">
+									We do not sell online. We prefer the bracelet to be held first.
+								</p>
+							</div>
+
+							<div className="map-wrap">
+								<svg viewBox="0 0 1000 540" className="map-svg" aria-hidden="true">
+									{/* hairline lat/lon grid */}
+									<g stroke="var(--hairline-soft)" strokeWidth="0.4">
+										{[...Array(11)].map((_, i) => (
+											<line key={'h' + i} x1="0" x2="1000" y1={i * 54} y2={i * 54} />
+										))}
+										{[...Array(13)].map((_, i) => (
+											<line key={'v' + i} x1={i * 83} x2={i * 83} y1="0" y2="540" />
+										))}
+									</g>
+									{/* abstract continents — soft blob shapes */}
+									<g fill="var(--hairline-soft)">
+										<path d="M120,180 Q170,140 240,150 Q300,160 320,210 Q310,260 260,280 Q200,290 160,270 Q110,250 120,180 Z" />
+										<path d="M430,150 Q500,130 560,150 Q610,170 620,210 Q610,260 560,280 Q480,300 440,270 Q400,230 430,150 Z" />
+										<path d="M780,200 Q860,180 900,220 Q920,260 880,290 Q820,310 780,290 Q740,260 780,200 Z" />
+										<path d="M820,440 Q880,430 900,460 Q900,490 860,500 Q820,500 810,470 Q810,450 820,440 Z" />
+										<path d="M520,360 Q560,350 580,380 Q580,410 540,420 Q500,420 510,390 Q510,370 520,360 Z" />
+									</g>
+									{/* pins */}
+									{HW_STOCKISTS.map((s, i) => {
+										const sold = s.status === 'sold-out';
+										const pinFill = sold ? '#8E887C' : '#C17B3A';
+										return (
+											<g
+												key={s.city}
+												onMouseEnter={() => setHovered(i)}
+												onMouseLeave={() => setHovered(null)}
+												style={{ cursor: 'default' }}
+											>
+												<circle
+													cx={s.x}
+													cy={s.y}
+													r={hovered === i ? 18 : 14}
+													fill={pinFill}
+													opacity={sold ? 0.1 : 0.14}
+												/>
+												<circle
+													cx={s.x}
+													cy={s.y}
+													r="4.5"
+													fill={pinFill}
+													opacity={sold ? 0.55 : 1}
+												/>
+												<text
+													x={s.x + 12}
+													y={s.y + 4}
+													fontSize="11"
+													fontFamily="DM Sans"
+													fontWeight="500"
+													letterSpacing="0.14em"
+													fill="currentColor"
+													style={{ color: sold ? 'var(--text-tertiary)' : 'var(--text-primary)' }}
+												>
+													{s.city.toUpperCase()}
+												</text>
+											</g>
+										);
+									})}
+								</svg>
+
+								<div className="stockist-list">
+									{HW_STOCKISTS.map((s, i) => {
+										const sold = s.status === 'sold-out';
+										return (
+											<div
+												className="row"
+												key={s.city}
+												onMouseEnter={() => setHovered(i)}
+												onMouseLeave={() => setHovered(null)}
+												style={{
+													color: hovered === i ? 'var(--amber)' : undefined,
+													transition: 'color .25s',
+													opacity: sold ? 0.6 : 1
+												}}
+											>
+												<span
+													className="city"
+													style={{
+														textDecoration: sold ? 'line-through' : 'none',
+														textDecorationColor: 'var(--hairline)'
+													}}
+												>
+													{s.city}
+												</span>
+												<span className="place">{s.place}</span>
+												<span
+													className="country"
+													style={{
+														color: sold ? 'var(--text-tertiary)' : 'var(--amber)',
+														letterSpacing: '0.22em'
+													}}
+												>
+													{sold ? 'Sold out' : 'In stock'}
+												</span>
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						</div>
+					</section>
+				);
+			}
+
+			// ─────── Footer ───────
+			function Footer() {
+				return (
+					<footer>
+						<div className="container">
+							<div className="ftr-top">
+								<div className="ftr-brand">
+									<div className="wm">
+										Hue<span className="amp"> & </span>Weave
+									</div>
+									<p>Color is the craft.</p>
+								</div>
+								<div className="ftr-col">
+									<h5>Collections</h5>
+									<ul>
+										<li>
+											<a href="#collections">Soleil</a>
+										</li>
+										<li>
+											<a href="#collections">Forêt</a>
+										</li>
+										<li>
+											<a href="#collections">Crépuscule</a>
+										</li>
+										<li>
+											<a href="#collections">Rosé</a>
+										</li>
+									</ul>
+								</div>
+								<div className="ftr-col">
+									<h5>The Atelier</h5>
+									<ul>
+										<li>
+											<a href="#craft">The Craft</a>
+										</li>
+										<li>
+											<a href="#manifesto">Manifesto</a>
+										</li>
+										<li>
+											<a href="#stockists">Stockists</a>
+										</li>
+										<li>
+											<a>Press inquiries</a>
+										</li>
+									</ul>
+								</div>
+								<div className="ftr-col">
+									<h5>Atelier</h5>
+									<ul>
+										<li>
+											<a>bonjour@hueandweave.com</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div className="ftr-bot">
+								<span>© MMXXIV Hue & Weave</span>
+								<span>Hand-loomed · New Hamburg · Est. 2024</span>
+							</div>
+						</div>
+					</footer>
+				);
+			}
+
+			Object.assign(window, {
+				Nav,
+				Hero,
+				Announce,
+				Collections,
+				Craft,
+				Manifesto,
+				Stockists,
+				Footer
+			});
+		</script>
+		<script type="text/babel" data-presets="react">
+			// App — composes the page + Tweaks panel
+
+			const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
+				theme: 'charcoal',
+				heroVariant: 'A',
+				cardStyle: 'bordered',
+				braceletStyle: 'ellipse'
+			}; /*EDITMODE-END*/
+
+			function App() {
+				const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+				// Sync bracelet style to a window flag the Section components read
+				React.useEffect(() => {
+					window.__braceletStyle = t.braceletStyle;
+				}, [t.braceletStyle]);
+
+				// Sync card style to body data attribute (CSS-driven)
+				React.useEffect(() => {
+					document.body.setAttribute('data-card', t.cardStyle);
+				}, [t.cardStyle]);
+
+				// Sync theme to body AND html data attribute (host may override body bg)
+				React.useEffect(() => {
+					document.body.setAttribute('data-theme', t.theme);
+					document.documentElement.setAttribute('data-theme', t.theme);
+				}, [t.theme]);
+
+				// Tinted cursor that follows mouse and picks up the section accent
+				React.useEffect(() => {
+					const dot = document.getElementById('cursorDot');
+					if (!dot) return;
+					let raf = 0;
+					const onMove = (e) => {
+						cancelAnimationFrame(raf);
+						raf = requestAnimationFrame(() => {
+							dot.style.left = e.clientX + 'px';
+							dot.style.top = e.clientY + 'px';
+						});
+						dot.classList.add('show');
+					};
+					const onLeave = () => dot.classList.remove('show');
+					const onTabAccent = () => {
+						const accent = getComputedStyle(document.body)
+							.getPropertyValue('--cursor-accent')
+							.trim();
+						if (accent) dot.style.background = accent;
+					};
+					window.addEventListener('mousemove', onMove);
+					window.addEventListener('mouseleave', onLeave);
+					const interval = setInterval(onTabAccent, 80);
+					return () => {
+						window.removeEventListener('mousemove', onMove);
+						window.removeEventListener('mouseleave', onLeave);
+						clearInterval(interval);
+					};
+				}, []);
+
+				return (
+					<>
+						<Nav />
+						<main>
+							<Hero variant={t.heroVariant} key={'hero-' + t.heroVariant + '-' + t.braceletStyle} />
+							<Announce />
+							<Collections key={'col-' + t.braceletStyle} />
+							<Craft />
+							<Manifesto />
+							<Stockists />
+							<Footer />
+						</main>
+
+						<TweaksPanel title="Tweaks">
+							<TweakSection label="Theme" />
+							<TweakSelect
+								label="Palette"
+								value={t.theme}
+								options={[
+									{ value: 'atelier', label: 'Atelier — warm cream (default)' },
+									{ value: 'charcoal', label: 'Charcoal — dark' },
+									{ value: 'royal', label: 'Royal — midnight & champagne' },
+									{ value: 'glamping', label: 'Glamping — moss & brass' },
+									{ value: 'porcelain', label: 'Porcelain — cool minimal' }
+								]}
+								onChange={(v) => setTweak('theme', v)}
+							/>
+
+							<TweakSection label="Hero" />
+							<TweakRadio
+								label="Variant"
+								value={t.heroVariant}
+								options={[
+									{ value: 'A', label: 'Editorial' },
+									{ value: 'B', label: 'Split' },
+									{ value: 'C', label: 'Quiet' },
+									{ value: 'D', label: 'Plate' }
+								]}
+								onChange={(v) => setTweak('heroVariant', v)}
+							/>
+
+							<TweakSection label="Cards" />
+							<TweakRadio
+								label="Style"
+								value={t.cardStyle}
+								options={[
+									{ value: 'bordered', label: 'Bordered' },
+									{ value: 'minimal', label: 'Minimal' }
+								]}
+								onChange={(v) => setTweak('cardStyle', v)}
+							/>
+
+							<TweakSection label="Bracelet" />
+							<TweakRadio
+								label="Illustration"
+								value={t.braceletStyle}
+								options={[
+									{ value: 'ellipse', label: 'Ellipse' },
+									{ value: 'woven', label: 'Woven' }
+								]}
+								onChange={(v) => setTweak('braceletStyle', v)}
+							/>
+						</TweaksPanel>
+					</>
+				);
+			}
+
+			ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+		</script>
+	</body>
+</html>
